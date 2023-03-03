@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:demo_app/match_report_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +18,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Demo App"),
+        ),
+        body: Container(
+          color: Colors.lightBlueAccent,
+          height: 220,
+          width: window.physicalSize.width,
+          child: MatchReportWidget(),
+          padding: EdgeInsets.all(20),
+        ),
+      ),
     );
   }
 }

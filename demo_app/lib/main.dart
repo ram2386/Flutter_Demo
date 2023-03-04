@@ -1,7 +1,6 @@
-import 'dart:ui';
-
 import 'package:demo_app/match_report_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:demo_app/Constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
@@ -46,20 +45,23 @@ class MyApp extends StatelessWidget {
             childAspectRatio: 2,
             children: [
               Container(
-                color: Colors.lightBlueAccent,
+                color: kAccentColor,
                 child: ListView(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
                   scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
                   children: const [
                     SizedBox(
-                      width: 300,
+                      width: 320,
                       child: MatchReportWidget(),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 320,
                       child: MatchReportWidget(),
                     ),
                     SizedBox(
-                      width: 300,
+                      width: 320,
                       child: MatchReportWidget(),
                     ),
                   ],

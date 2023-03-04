@@ -1,6 +1,7 @@
 import 'package:demo_app/custom_text.dart';
 import 'package:demo_app/report_row.dart';
 import 'package:flutter/material.dart';
+import 'Constants.dart';
 
 class MatchReportWidget extends StatelessWidget {
   const MatchReportWidget({Key? key}) : super(key: key);
@@ -8,9 +9,6 @@ class MatchReportWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16.0),
-      ),
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -21,17 +19,17 @@ class MatchReportWidget extends StatelessWidget {
                   Custom_Text(
                     text: "LIVE",
                     color: Colors.red,
-                    weight: FontWeight.bold,
+                    weight: kTitleFontWeight,
                   ),
                   Custom_Text(
                     text: " ● 3rd Test ● ",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.bold,
+                    color: kFontColor,
+                    weight: kTitleFontWeight,
                   ),
                   Custom_Text(
                     text: "Indore",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.w400,
+                    color: kFontColor,
+                    weight: kParagraphFontWeight,
                   ),
                 ],
                 rightSide: [
@@ -45,15 +43,15 @@ class MatchReportWidget extends StatelessWidget {
                 leftSide: [
                   Custom_Text(
                     text: "🇮🇳 IND",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.bold,
+                    color: kFontColor,
+                    weight: kTitleFontWeight,
                   ),
                 ],
                 rightSide: [
                   Custom_Text(
                     text: "109 & 163",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.bold,
+                    color: kFontColor,
+                    weight: kTitleFontWeight,
                   ),
                 ],
               ),
@@ -61,26 +59,26 @@ class MatchReportWidget extends StatelessWidget {
                 leftSide: [
                   Custom_Text(
                     text: "🇦🇺 AUS ●",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.bold,
+                    color: kHighlightedFontColor,
+                    weight: kTitleFontWeight,
                   ),
                 ],
                 rightSide: [
                   Custom_Text(
                     text: "(10 ov, T:76)",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.w400,
+                    color: kFontColor,
+                    weight: kParagraphFontWeight,
                     size: 12,
                   ),
                   Custom_Text(
                     text: "109 & ",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.bold,
+                    color: kFontColor,
+                    weight: kTitleFontWeight,
                   ),
                   Custom_Text(
                     text: "13/1",
-                    color: Colors.black,
-                    weight: FontWeight.bold,
+                    color: kHighlightedFontColor,
+                    weight: kTitleFontWeight,
                   ),
                 ],
               ),
@@ -88,24 +86,27 @@ class MatchReportWidget extends StatelessWidget {
                 leftSide: [
                   Custom_Text(
                     text: "Day 3 - Session 1: Australia need 63 runs.",
-                    color: Colors.black.withAlpha(172),
-                    weight: FontWeight.w400,
+                    color: kFontColor,
+                    weight: kParagraphFontWeight,
                     size: 12,
                   ),
                 ],
               ),
               Divider(
-                color: Colors.black.withAlpha(72),
+                color: kDividerColor,
                 height: 1,
               ),
               ReportRow(leftSide: [
                 Custom_Text(
                   text: "Schedule  Report  Series",
-                  color: Colors.black.withAlpha(172),
-                  weight: FontWeight.bold,
+                  color: kHighlightedFontColor,
+                  weight: kTitleFontWeight,
                 )
               ])
             ]),
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
       ),
     );
   }

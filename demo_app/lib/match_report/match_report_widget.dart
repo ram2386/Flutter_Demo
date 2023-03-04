@@ -1,7 +1,7 @@
-import 'package:demo_app/custom_text.dart';
-import 'package:demo_app/report_row.dart';
+import 'package:demo_app/match_report/report_row.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../constants.dart';
+import '../custom_widgets/custom_text.dart';
 
 class MatchReportWidget extends StatelessWidget {
   const MatchReportWidget({Key? key}) : super(key: key);

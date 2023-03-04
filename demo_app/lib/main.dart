@@ -1,8 +1,8 @@
-import 'package:demo_app/custom_horizontal_list.dart';
-import 'package:demo_app/match_report_widget.dart';
-import 'package:demo_app/status_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_app/constants.dart';
+
+import 'custom_widgets/custom_horizontal_list.dart';
+import 'match_report/match_report_widget.dart';
 
 void main() {
   runApp(const MyApp());

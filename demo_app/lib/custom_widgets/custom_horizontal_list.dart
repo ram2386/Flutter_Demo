@@ -17,6 +17,6 @@ class CustomHorizontalList extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) => item,
         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
         scrollDirection: Axis.horizontal,
-        physics: BouncingScrollPhysics());
+        physics: const BouncingScrollPhysics());
   }
 }

@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 color: kAccentColor,
-                child: CustomHorizontalList(
+                child: const CustomHorizontalList(
                   item: SizedBox(
                     width: 320,
                     child: MatchReportWidget(),

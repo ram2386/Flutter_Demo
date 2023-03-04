@@ -24,7 +24,7 @@ class PostWidget extends StatelessWidget {
             color: kDividerColor,
             width: 1,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(16))),
+          borderRadius: const BorderRadius.all(Radius.circular(16))),
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: (Wrap(
@@ -33,7 +33,7 @@ class PostWidget extends StatelessWidget {
             CustomActionImageView(
               imageUrl: imageUrl,
               showActionButton: true,
-              borderRadius: BorderRadius.all(Radius.circular(16)),
+              borderRadius: const BorderRadius.all(Radius.circular(16)),
             ),
             CustomText(
               text: title,

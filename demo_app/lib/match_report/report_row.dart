@@ -12,7 +12,7 @@ class ReportRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: leftSide + [Spacer()] + (rightSide ?? []),
+      children: leftSide + [const Spacer()] + (rightSide ?? []),
     );
   }
 }

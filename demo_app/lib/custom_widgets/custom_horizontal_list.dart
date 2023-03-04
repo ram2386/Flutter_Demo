@@ -5,10 +5,10 @@ class CustomHorizontalList extends StatelessWidget {
   final int count;
 
   const CustomHorizontalList({
-    super.key,
+    Key? key,
     required this.item,
     required this.count,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

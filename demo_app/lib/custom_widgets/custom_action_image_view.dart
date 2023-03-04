@@ -8,12 +8,14 @@ class CustomActionImageView extends StatelessWidget {
   final double? width;
   final double? height;
 
-  CustomActionImageView(
-      {required this.imageUrl,
+  const CustomActionImageView(
+      {Key? key,
+      required this.imageUrl,
       this.borderRadius = BorderRadius.zero,
       this.showActionButton = false,
       this.width,
-      this.height});
+      this.height})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

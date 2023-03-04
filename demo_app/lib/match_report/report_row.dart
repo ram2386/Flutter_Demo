@@ -4,10 +4,10 @@ class ReportRow extends StatelessWidget {
   final List<Widget> leftSide;
   final List<Widget>? rightSide;
   const ReportRow({
-    super.key,
+    Key? key,
     required this.leftSide,
     this.rightSide,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

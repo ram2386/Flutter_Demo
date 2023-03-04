@@ -1,7 +1,7 @@
 import 'package:demo_app/custom_text.dart';
 import 'package:demo_app/report_row.dart';
 import 'package:flutter/material.dart';
-import 'Constants.dart';
+import 'constants.dart';
 
 class MatchReportWidget extends StatelessWidget {
   const MatchReportWidget({Key? key}) : super(key: key);
@@ -16,17 +16,17 @@ class MatchReportWidget extends StatelessWidget {
             children: [
               ReportRow(
                 leftSide: [
-                  Custom_Text(
+                  CustomText(
                     text: "LIVE",
                     color: Colors.red,
                     weight: kTitleFontWeight,
                   ),
-                  Custom_Text(
+                  CustomText(
                     text: " ● 3rd Test ● ",
                     color: kFontColor,
                     weight: kTitleFontWeight,
                   ),
-                  Custom_Text(
+                  CustomText(
                     text: "Indore",
                     color: kFontColor,
                     weight: kParagraphFontWeight,
@@ -41,14 +41,14 @@ class MatchReportWidget extends StatelessWidget {
               ),
               ReportRow(
                 leftSide: [
-                  Custom_Text(
+                  CustomText(
                     text: "🇮🇳 IND",
                     color: kFontColor,
                     weight: kTitleFontWeight,
                   ),
                 ],
                 rightSide: [
-                  Custom_Text(
+                  CustomText(
                     text: "109 & 163",
                     color: kFontColor,
                     weight: kTitleFontWeight,
@@ -57,25 +57,25 @@ class MatchReportWidget extends StatelessWidget {
               ),
               ReportRow(
                 leftSide: [
-                  Custom_Text(
+                  CustomText(
                     text: "🇦🇺 AUS ●",
                     color: kHighlightedFontColor,
                     weight: kTitleFontWeight,
                   ),
                 ],
                 rightSide: [
-                  Custom_Text(
+                  CustomText(
                     text: "(10 ov, T:76)",
                     color: kFontColor,
                     weight: kParagraphFontWeight,
                     size: 12,
                   ),
-                  Custom_Text(
+                  CustomText(
                     text: "109 & ",
                     color: kFontColor,
                     weight: kTitleFontWeight,
                   ),
-                  Custom_Text(
+                  CustomText(
                     text: "13/1",
                     color: kHighlightedFontColor,
                     weight: kTitleFontWeight,
@@ -84,7 +84,7 @@ class MatchReportWidget extends StatelessWidget {
               ),
               ReportRow(
                 leftSide: [
-                  Custom_Text(
+                  CustomText(
                     text: "Day 3 - Session 1: Australia need 63 runs.",
                     color: kFontColor,
                     weight: kParagraphFontWeight,
@@ -97,7 +97,7 @@ class MatchReportWidget extends StatelessWidget {
                 height: 1,
               ),
               ReportRow(leftSide: [
-                Custom_Text(
+                CustomText(
                   text: "Schedule  Report  Series",
                   color: kHighlightedFontColor,
                   weight: kTitleFontWeight,

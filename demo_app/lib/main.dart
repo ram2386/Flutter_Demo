@@ -1,6 +1,8 @@
+import 'package:demo_app/custom_horizontal_list.dart';
 import 'package:demo_app/match_report_widget.dart';
+import 'package:demo_app/status_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:demo_app/Constants.dart';
+import 'package:demo_app/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,25 +48,12 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 color: kAccentColor,
-                child: ListView(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 4, vertical: 12),
-                  scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(),
-                  children: const [
-                    SizedBox(
-                      width: 320,
-                      child: MatchReportWidget(),
-                    ),
-                    SizedBox(
-                      width: 320,
-                      child: MatchReportWidget(),
-                    ),
-                    SizedBox(
-                      width: 320,
-                      child: MatchReportWidget(),
-                    ),
-                  ],
+                child: CustomHorizontalList(
+                  item: SizedBox(
+                    width: 320,
+                    child: MatchReportWidget(),
+                  ),
+                  count: 5,
                 ),
               ),
             ]),

@@ -1,3 +1,4 @@
+import 'package:demo_app/Pages/ask_cric_info_page.dart';
 import 'package:demo_app/Pages/post_detail_page.dart';
 import 'package:demo_app/Widgets/post_widget.dart';
 import 'package:demo_app/Widgets/status_widget.dart';
@@ -60,6 +61,7 @@ class HomePage extends StatelessWidget {
         ),
       ]),
       body: ListView.builder(
+          padding: EdgeInsets.only(bottom: 72), // remove if FAB remove
           itemCount: 5,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
@@ -67,7 +69,19 @@ class HomePage extends StatelessWidget {
                 ? _getActionWidgets()
                 : _getPostWidgets(ctx: context);
           }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _navigate(to: AskCricInfoPage(), withContext: context),
+        child: Icon(
+          Icons.insert_comment_rounded,
+          color: Colors.yellow,
+        ),
+      ),
     );
+  }
+
+  void _navigate({required Widget to, required BuildContext withContext}) {
+    Navigator.push(withContext,
+        MaterialPageRoute(builder: (context) => to, fullscreenDialog: true));
   }
 
   Widget _getActionWidgets() {
@@ -123,13 +137,7 @@ class HomePage extends StatelessWidget {
         description:
             "Says league will start to widen and improve talent pool in the country Says league will start to widen and improve talent pool in the country",
         imageUrl: "https://static.toiimg.com/photo/msid-70152799/70152799.jpg",
-        callback: () {
-          Navigator.push(
-            ctx,
-            MaterialPageRoute(
-                builder: (context) => PostDetailPage(), fullscreenDialog: true),
-          );
-        },
+        callback: () => _navigate(to: PostDetailPage(), withContext: ctx),
       ),
     );
   }

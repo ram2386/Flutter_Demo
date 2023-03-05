@@ -1,3 +1,4 @@
+import 'package:demo_app/Pages/post_detail_page.dart';
 import 'package:demo_app/Widgets/post_widget.dart';
 import 'package:demo_app/Widgets/status_widget.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,9 @@ class HomePage extends StatelessWidget {
           itemCount: 5,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
-            return index == 0 ? _getActionWidgets() : _getPostWidgets();
+            return index == 0
+                ? _getActionWidgets()
+                : _getPostWidgets(ctx: context);
           }),
     );
   }
@@ -111,16 +114,23 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _getPostWidgets() {
+  Widget _getPostWidgets({required BuildContext ctx}) {
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12, bottom: 12, top: 4),
       child: PostWidget(
-          title:
-              "Harmanpreet hopes WPL will reduce gap between India and Australia",
-          description:
-              "Says league will start to widen and improve talent pool in the country Says league will start to widen and improve talent pool in the country",
-          imageUrl:
-              "https://static.toiimg.com/photo/msid-70152799/70152799.jpg"),
+        title:
+            "Harmanpreet hopes WPL will reduce gap between India and Australia",
+        description:
+            "Says league will start to widen and improve talent pool in the country Says league will start to widen and improve talent pool in the country",
+        imageUrl: "https://static.toiimg.com/photo/msid-70152799/70152799.jpg",
+        callback: () {
+          Navigator.push(
+            ctx,
+            MaterialPageRoute(
+                builder: (context) => PostDetailPage(), fullscreenDialog: true),
+          );
+        },
+      ),
     );
   }
 }

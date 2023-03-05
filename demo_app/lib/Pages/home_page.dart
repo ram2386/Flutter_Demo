@@ -70,8 +70,9 @@ class HomePage extends StatelessWidget {
                 : _getPostWidgets(ctx: context);
           }),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => _navigate(to: AskCricInfoPage(), withContext: context),
-        child: Icon(
+        onPressed: () =>
+            _navigate(to: const AskCricInfoPage(), withContext: context),
+        child: const Icon(
           Icons.insert_comment_rounded,
           color: Colors.yellow,
         ),
@@ -114,7 +115,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         // Match Status
-        SizedBox(
+        const SizedBox(
           height: kStatusContainerHeight,
           child: CustomHorizontalList(
               item: StatusWidget(
@@ -137,7 +138,7 @@ class HomePage extends StatelessWidget {
         description:
             "Says league will start to widen and improve talent pool in the country Says league will start to widen and improve talent pool in the country",
         imageUrl: "https://static.toiimg.com/photo/msid-70152799/70152799.jpg",
-        callback: () => _navigate(to: PostDetailPage(), withContext: ctx),
+        callback: () => _navigate(to: const PostDetailPage(), withContext: ctx),
       ),
     );
   }

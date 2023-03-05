@@ -23,7 +23,7 @@ class PostDetailPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(12),
         physics: const BouncingScrollPhysics(),
-        children: [
+        children: const [
           CustomText(
             text:
                 "Harmanpreet hopes WPL will reduce gap between India and Australia",

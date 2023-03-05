@@ -2,7 +2,7 @@ import 'package:demo_app/custom_widgets/custom_action_image_view.dart';
 import 'package:demo_app/custom_widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../constants.dart';
 
 class PostDetailPage extends StatelessWidget {
   const PostDetailPage({Key? key}) : super(key: key);

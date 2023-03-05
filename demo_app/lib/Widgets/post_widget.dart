@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'constants.dart';
-import 'custom_widgets/custom_action_image_view.dart';
-import 'custom_widgets/custom_text.dart';
+import 'package:demo_app/constants.dart';
+import 'package:demo_app/custom_widgets/custom_action_image_view.dart';
+import 'package:demo_app/custom_widgets/custom_text.dart';
 
 class PostWidget extends StatelessWidget {
   final String title;

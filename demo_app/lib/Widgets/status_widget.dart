@@ -1,6 +1,6 @@
 import 'package:demo_app/constants.dart';
 import 'package:flutter/material.dart';
-import 'custom_widgets/custom_text.dart';
+import '../custom_widgets/custom_text.dart';
 
 class StatusWidget extends StatelessWidget {
   final String title;

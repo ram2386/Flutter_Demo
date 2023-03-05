@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:demo_app/constants.dart';
-import 'custom_widgets/custom_text.dart';
+import '../custom_widgets/custom_text.dart';
 
 class MatchInfoWidget extends StatelessWidget {
   final String title;

@@ -16,22 +16,25 @@ final dioProvider = Provider(
 );
 
 // MatchReportAPI
-final matchReportProvider = FutureProvider<List<MatchReport>>((ref) async {
-  final dio = ref.watch(dioProvider);
+final matchReportProvider =
+    FutureProvider.autoDispose<List<MatchReport>>((ref) async {
+  final dio = ref.read(dioProvider);
   final response = await dio.get(Endpoints.matchReport);
   return MatchReportResponse.fromJson(response.data).results;
 });
 
 // CricketStoryAPI
-final cricketStoryProvider = FutureProvider<List<Story>>((ref) async {
-  final dio = ref.watch(dioProvider);
+final cricketStoryProvider =
+    FutureProvider.autoDispose<List<Story>>((ref) async {
+  final dio = ref.read(dioProvider);
   final response = await dio.get(Endpoints.cricketStory);
   return StoryResponse.fromJson(response.data).results;
 });
 
 // TrendingNewsAPI
-final trendingNewsProvider = FutureProvider<List<TrendingNews>>((ref) async {
-  final dio = ref.watch(dioProvider);
+final trendingNewsProvider =
+    FutureProvider.autoDispose<List<TrendingNews>>((ref) async {
+  final dio = ref.read(dioProvider);
   final response = await dio.get(Endpoints.trendingNews);
   return TrendingNewsResponse.fromJson(response.data).results;
 });

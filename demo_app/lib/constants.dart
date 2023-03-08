@@ -11,7 +11,7 @@ const kAccentColor = Color(0xff0298DC);
 const kPrimaryColor = Color(0xff03A9F5);
 
 const kMatchReportContainerHeight = 200.0;
-const kMatchReportWidth = 320.0;
+const kMatchReportWidth = 350.0;
 const kStatusContainerHeight = 150.0;
 const kPostContainerHeight = 480.0;
 const kMatchInfoContainerHeight = 20.0;

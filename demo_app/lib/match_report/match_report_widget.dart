@@ -2,9 +2,13 @@ import 'package:demo_app/match_report/report_row.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../custom_widgets/custom_text.dart';
+import '../models/matchReport.dart';
 
 class MatchReportWidget extends StatelessWidget {
-  const MatchReportWidget({Key? key}) : super(key: key);
+  final MatchReport matchReport;
+
+  const MatchReportWidget({Key? key, required this.matchReport})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,26 +20,26 @@ class MatchReportWidget extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               ReportRow(
                 leftSide: [
                   CustomText(
-                    text: "LIVE",
-                    color: Colors.red,
+                    text: matchReport.status,
+                    color: matchReport.isLive ? Colors.red : Colors.black,
                     weight: kTitleFontWeight,
                   ),
                   CustomText(
-                    text: " ● 3rd Test ● ",
+                    text: " ● ${matchReport.title} ● ",
                     color: kFontColor,
                     weight: kTitleFontWeight,
                   ),
                   CustomText(
-                    text: "Indore",
+                    text: matchReport.venue,
                     color: kFontColor,
                     weight: kParagraphFontWeight,
                   ),
                 ],
-                rightSide: [
+                rightSide: const [
                   Icon(
                     Icons.notifications_none,
                   ),
@@ -45,14 +49,16 @@ class MatchReportWidget extends StatelessWidget {
               ReportRow(
                 leftSide: [
                   CustomText(
-                    text: "🇮🇳 IND",
+                    text: "🇮🇳 ${matchReport.country1}",
                     color: kFontColor,
                     weight: kTitleFontWeight,
                   ),
                 ],
                 rightSide: [
                   CustomText(
-                    text: "109 & 163",
+                    text: matchReport.isLive
+                        ? "${matchReport.country1Session1} & ${matchReport.country1Session2}"
+                        : "",
                     color: kFontColor,
                     weight: kTitleFontWeight,
                   ),
@@ -61,25 +67,32 @@ class MatchReportWidget extends StatelessWidget {
               ReportRow(
                 leftSide: [
                   CustomText(
-                    text: "🇦🇺 AUS ●",
+                    text: matchReport.isLive
+                        ? "🇦🇺 ${matchReport.country2} ●"
+                        : "🇦🇺 ${matchReport.country2}",
                     color: kHighlightedFontColor,
                     weight: kTitleFontWeight,
                   ),
                 ],
                 rightSide: [
                   CustomText(
-                    text: "(10 ov, T:76)",
+                    text: matchReport.isLive
+                        ? "(${matchReport.completedOver} ov, T:${matchReport.totalOver})"
+                        : "",
                     color: kFontColor,
                     weight: kParagraphFontWeight,
                     size: 12,
                   ),
                   CustomText(
-                    text: "109 & ",
+                    text: matchReport.isLive
+                        ? "${matchReport.country2Session1} &"
+                        : "",
                     color: kFontColor,
                     weight: kTitleFontWeight,
                   ),
                   CustomText(
-                    text: "13/1",
+                    text:
+                        matchReport.isLive ? matchReport.country2Session2 : "",
                     color: kHighlightedFontColor,
                     weight: kTitleFontWeight,
                   ),
@@ -88,18 +101,18 @@ class MatchReportWidget extends StatelessWidget {
               ReportRow(
                 leftSide: [
                   CustomText(
-                    text: "Day 3 - Session 1: Australia need 63 runs.",
+                    text: matchReport.summary,
                     color: kFontColor,
                     weight: kParagraphFontWeight,
                     size: 12,
                   ),
                 ],
               ),
-              Divider(
+              const Divider(
                 color: kDividerColor,
                 height: 1,
               ),
-              ReportRow(leftSide: [
+              const ReportRow(leftSide: [
                 CustomText(
                   text: "Schedule  Report  Series",
                   color: kHighlightedFontColor,

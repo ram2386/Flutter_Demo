@@ -17,16 +17,22 @@ class HomePage extends ConsumerWidget {
           child: CircularProgressIndicator(),
         ),
       ),
-      data: (trendingNews) => ListView.builder(
-        itemCount: trendingNews.length + 1,
-        physics: const BouncingScrollPhysics(),
-        itemBuilder: (BuildContext context, int index) {
-          return index == 0
-              ? const ActionPage()
-              : PostListPage(
-                  news: trendingNews[index - 1],
+      data: (trendingNews) => CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: ActionPage(),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return PostListPage(
+                  news: trendingNews[index],
                 );
-        },
+              },
+              childCount: trendingNews.length,
+            ),
+          ),
+        ],
       ),
     );
   }

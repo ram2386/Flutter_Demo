@@ -30,7 +30,7 @@ class StatusWidget extends StatelessWidget {
             padding: const EdgeInsets.all(4.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: kPrimaryColor, width: 4),
+              border: Border.all(color: borderColor, width: 4),
             ),
             child: CircleAvatar(
               backgroundImage: NetworkImage(imageUrl),

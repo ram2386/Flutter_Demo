@@ -31,7 +31,7 @@ class ActionPage extends ConsumerWidget {
                 }),
           ),
 
-          // Match Resport
+          // Match Report
           Container(
             height: kMatchReportContainerHeight,
             color: kAccentColor,
